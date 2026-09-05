@@ -1,0 +1,22 @@
+services:
+  octopus-app:
+    container_name: octopus-pm
+    image: ghcr.io/gabrielbaute/octopus-project-manager:latest
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - JWT_SECRET=tu_clave_secreta_super_segura_aqui
+      - DATABASE_PATH=/app/data/local.db
+    ports:
+      - "3000:3000"
+    volumes:
+      - /opt/octopus-project-manager/data:/app/data
+    networks:
+      - octopus-network
+
+networks:
+  octopus-network:
+    name: octopus-network
+    driver: bridge
