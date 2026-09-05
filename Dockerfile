@@ -13,6 +13,7 @@ COPY package.json pnpm-lock.yaml ./
 # Instalación de dependencias respetando los scripts de compilación de better-sqlite3
 RUN pnpm config set fetch-retries 5 \
  && pnpm config set fetch-retry-maxtimeout 120000 \
+ && pnpm config set only-built-dependencies better-sqlite3 \
  && pnpm install --frozen-lockfile --config.minimum-release-age=0
 
 # ==========================================
