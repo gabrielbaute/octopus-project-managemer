@@ -11,7 +11,9 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY package.json pnpm-lock.yaml ./
 
 # Instalación de dependencias respetando los scripts de compilación de better-sqlite3
-RUN pnpm install --frozen-lockfile --config.minimum-release-age=0
+RUN pnpm config set fetch-retries 5 \
+ && pnpm config set fetch-retry-maxtimeout 120000 \
+ && pnpm install --frozen-lockfile --config.minimum-release-age=0
 
 # ==========================================
 # 2. ETAPA DE COMPILACIÓN (BUILD NEXT.JS)
