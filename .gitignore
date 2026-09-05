@@ -1,0 +1,46 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Common ignores
+node_modules
+.next/
+.DS_Store
+
+# Repomix
+repomix-output.xml
+
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Compilación de Next.js
+.next/
+out/
+build/
+
+# Archivos de entorno y secretos
+.env
+.env*.local
+
+# Base de Datos SQLite local
+data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# IDEs y Sistema Operativo
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
