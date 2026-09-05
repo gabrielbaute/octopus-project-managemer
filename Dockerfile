@@ -11,7 +11,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 COPY package.json pnpm-lock.yaml ./
 
 # Instalación de dependencias respetando los scripts de compilación de better-sqlite3
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --config.minimum-release-age=0
 
 # ==========================================
 # 2. ETAPA DE COMPILACIÓN (BUILD NEXT.JS)
