@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H ${HOSTNAME:-localhost} -p ${PORT:-3000}",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H ${HOSTNAME:-0.0.0.0} -p ${PORT:-3000}",
     "release:patch": "pnpm version patch && git push origin main --follow-tags",
     "release:minor": "pnpm version minor && git push origin main --follow-tags",
     "release:major": "pnpm version major && git push origin main --follow-tags"
